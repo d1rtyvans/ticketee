@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
     resources :projects, only: %i(new create destroy)
     resources :users do
-      member do
-        patch :archive
-      end
+      member { patch :archive }
     end
-    resources :states, only: %i(index new create)
+    resources :states, only: %i(index new create) do
+      member { get :make_default }
+    end
   end
 
   devise_for :users
