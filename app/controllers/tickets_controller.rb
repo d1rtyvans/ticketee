@@ -52,7 +52,7 @@ class TicketsController < ApplicationController
 
     def ticket_params
       params.require(:ticket).permit(
-        :name, :description, attachments_attributes: [:file, :file_cache])
+        :name, :description, :tag_names, attachments_attributes: [:file, :file_cache])
     end
 
     def set_project
