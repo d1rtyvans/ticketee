@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   root "projects#index"
 
   resources :projects, only: %i(index show edit update) do
-    resources :tickets
+    resources :tickets do
+      collection { get :search }
+    end
   end
 
   resources :tickets, only: [] do
