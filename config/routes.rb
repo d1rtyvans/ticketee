@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   resources :tickets, only: [] do
     resources :comments, only: :create
+    resources :tags, only: [] do
+      member { delete :remove }
+    end
   end
 
   resources :attachments, only: %i(show new)
