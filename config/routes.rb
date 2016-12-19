@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :projects, only: %i(index show edit update) do
     resources :tickets do
       collection { get :search }
+      member { post :watch }
     end
   end
 
