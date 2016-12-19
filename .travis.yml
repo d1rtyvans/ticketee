@@ -2,5 +2,12 @@ language: ruby
 rvm: 2.2.1
 script: bundle exec rspec
 before_install:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+deploy:
+  provider: heroku
+  api_key:
+    secure: B6CaSpKjylDjsGdqH+xccUdGqOGUQFWXSc7AJW0bRkmje64ve40qLFzhriD2vbHZOM0uE/y7i+kjNPirY0jvaQGjqYwfw3gubqoqfF1viz5loAjS23k9sbuThMWUmWTGYYNPqYFxjERh0sISTCIh3K5g2Bj6gghGnn6PHtd4+RdHtDByh0fmWAYs6GkglzIQ87kyJspPnFciLn4FUU2VA8ArF8E/8ka+WbKP/4ErNbmmgTOaSQMoUvZ6rMY62DHQKWbZ7SKptfYbEjZQYw+3ucSeY8Kh0uHX+a22dVkhz23e6KLatylMpRaiyWn/rmcnRZcURrqZPTCigqlwhpNudmXtQUd2RqSWO5MptV7BJKladqliQR7WJIS3qjBFrRUAIrxPgEm4F6zZaCWkfjR5kWuRT2LxN+UgzyVY1wKShjuggBO5sb9+qoomPsBxYsB60kPJECkVVYkbgpT7QItuYd/0OBM2DkpyxCHA1Fh4V5GoTjHrPoV/Tm+hyaPerDxP2Y78qgQSo60optS9VT5hIyThDBAM39vZTUWDkL52jhd8EsAr73RE6jdrLJLIJxDETYQ3rZB5tfUBz3/h12CFat6B3O4wQegREJ7VOukTSjE0yx0FSg/zTEi+LegC8ys6JfQzjsIawcUg53EdhHiSFGN0GR8cBH6ljxRuyIzDTRk=
+  app: boiling-taiga-51096
+  on:
+    repo: steezyduzit/ticketee
