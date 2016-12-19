@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+ruby "2.2.1"
 gem "rails", "4.2.0"
 
 gem "bootstrap-sass", "~> 3.3"
@@ -12,7 +12,6 @@ gem "font-awesome-rails", "~> 4.3"
 gem "jbuilder", "~> 2.0"
 gem "jquery-rails"
 gem "pundit", "~> 0.3.0"
-gem "rails_12factor", group: :production
 gem "sass-rails", "~> 5.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "searcher", github: "radar/searcher"
@@ -31,6 +30,11 @@ end
 
 group :development do
   gem "web-console", "~> 2.0"
+end
+
+group :production do
+  gem "puma"
+  gem "rails_12factor"
 end
 
 group :test do
