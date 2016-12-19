@@ -15,8 +15,11 @@ gem "sass-rails", "~> 5.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "searcher", github: "radar/searcher"
 gem "simple_form", "~> 3.1.0"
-gem "sqlite3"
 gem "uglifier", ">= 1.3.0"
+
+# the book wants this, but it's pretty wack. Change it
+gem "sqlite3", group: %i(development test)
+gem "pg",      group: :production
 
 group :development, :test do
   gem "byebug"
