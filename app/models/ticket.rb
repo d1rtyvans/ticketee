@@ -28,6 +28,10 @@ class Ticket < ActiveRecord::Base
     end
   end
 
+  def cock
+    "COCK"
+  end
+
   private
 
     def assign_default_state

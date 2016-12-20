@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :api do
+    resources :projects, only: [] do
+      resources :tickets
+    end
+  end
+
   namespace :admin do
     root "application#index"
 
